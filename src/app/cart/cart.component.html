@@ -1,0 +1,39 @@
+
+       <section class="hero">
+      <div class="hero-content">
+          <h1 class="title">Your Final Step to <br/>
+             <span class = "brand"> IMMERSE & MOVE </span> </h1>
+          <p class="subtitle">Check out to start your journey!</p>
+          <h3 class="subtitle">Let's Get Ready to Step!</h3>
+          <div class="class-buttons">
+            
+          </div>
+          </div>
+
+         </section>
+   
+   
+   <section >
+      <div class="cart">
+      <ul class="cart-list">
+        <h1> My Cart </h1>
+  <!-- <li class="cart-item" *ngFor="let item of cartItems" *ngFor="let item of cartItems; let i = index"> -->
+    <li class="cart-item" *ngFor="let item of cartItems; let i = index">
+
+    <span class="item-description">{{ item.course }} - {{ item.level }} - {{ item.cost | currency }} 
+   
+    <button class="remove-btn" (click)="removeItem(item)">Remove from cart</button> </span>
+  </li>
+</ul>
+<p class="cart-total">Total: {{ totalCost | currency }}</p>
+<div class="cart-actions">
+  <button class="glow-button red" (click)="clearCart()">Clear Cart</button>
+  <button class="glow-button blue">Proceed to Checkout</button>
+</div>
+
+
+      <ng-template #emptyCart>
+        <p>Your cart is empty.</p>
+      </ng-template>
+      </div>
+    </section>

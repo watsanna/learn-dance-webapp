@@ -1,0 +1,88 @@
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+  <img src="logo.png" alt="Immerse & Move Logo" class="brand-logo" />
+</a>
+
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav" #navCollapse>
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Always Visible -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+
+        <!-- Logged Out View -->
+        <ng-container *ngIf="!isLoggedIn">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="navCollapse.classList.remove('show')">Login /  Create Account</a>
+
+          </li>
+
+        
+        </ng-container>
+
+        <!-- Logged In View -->
+        <ng-container *ngIf="isLoggedIn">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/courses">Courses</a>
+          </li>
+          <li class="nav-item">
+         
+
+        <a class="nav-link" routerLink="/cart">
+          Cart <span *ngIf="cartService.getItemCount() > 0">({{ cartService.getItemCount() }})</span>
+        </a>
+
+
+          </li>
+
+        
+
+          <!-- Profile Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="profileDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ user.name || 'Profile' }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+              <li><h6 class="dropdown-header">{{ user.name }}</h6></li>
+              <li><p class="small mb-0" style="color: white; padding:1rem;">{{ user.email }}</p></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" routerLink="/setting">Settings</a></li>
+            
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item text-danger" (click)="logout()">Log Out</a></li>
+            </ul>
+          </li>
+        </ng-container>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+

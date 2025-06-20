@@ -1,0 +1,76 @@
+  <section class="hero">
+      <div class="hero-content">
+          <h3 class="subtitle">Sign Up / Sign In to </h3> 
+          <h1> <span class = "brand"> IMMERSE & MOVE </span> </h1>
+          <p class="subtitle">Your journey to mastering dance starts here!</p>
+          <h3 class="subtitle">Get Ready to Step!</h3>
+          <div class="class-buttons">
+            <button (click)="scrollTo('signin')" class="glow-button orange">Sign In</button>
+            <button (click)="scrollTo('signup')" class="glow-button blue"> Sign Up</button>
+          </div>
+         
+          </div>
+
+         </section>
+
+
+<div class="container"> 
+ 
+
+ <section> 
+<div id="signin" class="section-fade"></div>
+<div class="container mt-5" style="max-width: 400px;">
+  <h2 class="section-title">Sign In</h2>
+
+  <div class="mb-3">
+    <label class="form-label text-light">Username / E-mail</label>
+    <input type="text" class="form-control" [(ngModel)]="name" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label text-light">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="email" />
+  </div>
+
+  <button class="glow-button orange-login" (click)="login()">Login</button>
+  
+</div>
+
+</section>
+
+<section>
+
+ <div id="signup" class="section-fade"></div>
+
+ <div class="container mt-5" style="max-width: 400px;">
+  <h2 class="section-title" style="color:#2b84ea">Sign Up</h2>
+
+  <div class="mb-3">
+    <label class="form-label text-light">First & Last Name</label>
+    <input type="text" class="form-control" [(ngModel)]="name" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label text-light">Email</label>
+    <input type="email" class="form-control" [(ngModel)]="email" />
+  </div>
+
+    <div class="mb-3">
+    <label class="form-label text-light">Password</label>
+    <input type="email" class="form-control" [(ngModel)]="email" />
+  </div>
+
+    <div class="mb-3">
+    <label class="form-label text-light"> Confirm Password</label>
+    <input type="email" class="form-control" [(ngModel)]="email" />
+  </div>
+
+  <button class="glow-button blue-signup" (click)="login()">Create Account</button>
+</div>
+
+</section>
+</div>
+
+ <div id="create-account" class="section-fade"></div>
+
+
